@@ -86,7 +86,7 @@
       
         <p>本次学习的内容是《机器学习》一书中的线性模型这一章节另外这一章节理论性的东西更多，所以还学习了《Machine Learning in Action》中的Logistic回归，实战了一些简单的例子作为互补参考。</p>
 <p>代码以及测试用例：<br><a href="https://github.com/CallMeSp/MachineLearning.git" target="_blank" rel="noopener">https://github.com/CallMeSp/MachineLearning.git</a></p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a><strong>正文</strong></h2><p>先说一个数学符号：<br>$ \ $<br>arg min f(x) 是指使得函数 f(x) 取得其最小值的所有自变量 x 的集合。比如，函数 cos(x) 在 ±π、±3π、±5π、……处取得最小值（-1），则 argmin cos(x) = {±π, ±3π, ±5π, …}。<br>如果函数 f(x) 只在一处取得其最小值，则 argmin f(x) 为单点集.</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a><strong>正文</strong></h2><p>$ \sum $<br>先说一个数学符号：<br>$ \ $<br>arg min f(x) 是指使得函数 f(x) 取得其最小值的所有自变量 x 的集合。比如，函数 cos(x) 在 ±π、±3π、±5π、……处取得最小值（-1），则 argmin cos(x) = {±π, ±3π, ±5π, …}。<br>如果函数 f(x) 只在一处取得其最小值，则 argmin f(x) 为单点集.</p>
 <h3 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a><strong>基本形式</strong></h3><p>给定d个属性描述的示例$x=（x_1;x_2;…;x_d)$,其中xi是x在第i个属性的取值。线性模型试图学得一个通过属性的线性组合来进行预测的函数，即<br>$ \ $<br>    $f(x)=w_1x_1+w_2x_2+…+w_dx_d+b$<br>用向量形式写成：<br>$ \ $<br>    $f(x)=w^Tx+b，其中w=(w_1;w_2;…;w_d)$</p>
 <p>w和b学得之后，模型就得以确定。</p>
 <h3 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a><strong>线性回归</strong></h3><p>给定数据集D={（X1,y1），（X2,y2），…，（Xm,ym）}，其中Xi=(xi1;xi2;…;xid),yi∈R 。“线性回归”试图学得一个线性模型以尽可能准确的预测实值输出标记。<br>先考虑一种最简单的情形：输入属性的数目只有一个，线性回归试图学得<br>$ \ $<br>    $f(x_i)=w*x_i+b$<br>使得f(xi)≈yi。<br>如何确定w和b呢？显然关键是如何衡量f(x)和y之间的差别，而<strong>均方误差</strong>是回归任务中最常用的性能度量，因此我们可试图让均方误差最小化，即<br>$ \ $<br>    $(w,b)=arg min ∑ (f(x_i)-y_i)^2<br>         =arg min ∑ (y_i-wx_i-b)^2$</p>
